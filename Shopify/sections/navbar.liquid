@@ -1,0 +1,40 @@
+<div id="navbarr">
+  
+<img id="logo" src="{{ 'burger_menu.jpg' | asset_img_url }}" alt="menu">
+
+<img id="logo" src="{{ 'logo.png' | asset_img_url }}" alt="logo">
+
+<ul id="ul_navbar">
+{% for link in linklists.main-menu.links %}
+    {% assign child_list_handle = link.title | handleize %}
+    {% if linklists[child_list_handle].links != blank %}
+     <li> <a href="{{ link.url }}">{{ link.title }}</a> </li>
+      [{% for childlink in linklists[child_list_handle].links %}
+      <li> <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a> </li>
+      {% endfor %}]
+    {% else %}
+     <li> <a href="{{ link.url }}">{{ link.title }}</a> </li>
+    {% endif %}
+  {% endfor %}
+
+  <!-- <li> <a href="/cart">cart</a> </li> -->
+
+  {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+      <a href="/account">account</a>
+      {{ 'log out'  | customer_logout_link }}
+    {% else %}
+      {{ 'log in ' | customer_login_link }}
+      {{ 'register' | customer_register_link }}
+    {% endif %}
+  {% endif %}
+</ul>
+
+<ul id="icons_navbar">
+<li class="ico_navbar"><img  src="{{ 'search.jpg' | asset_img_url }}" alt="search"></li>
+<li class="ico_navbar"><img  src="{{ 'user.jpg' | asset_img_url }}" alt="user"></li>
+<li class="ico_navbar"><a href=""><img  src="{{ 'heart.jpg' | asset_img_url }}" alt="heart"><li id="heart_num" class="circle">0</li></a></li>
+<li class="ico_navbar"><a href="/cart"><img  src="{{ 'cart.jpg' | asset_img_url }}" alt="cart"><li id="cart_num" class="circle">0</li></a></li>
+</ul>
+
+</div>

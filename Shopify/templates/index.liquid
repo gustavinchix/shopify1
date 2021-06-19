@@ -1,0 +1,57 @@
+<div id="First-screen">
+
+<ul id="social_links">
+  <li><img id="id_fb" src="{{ 'fb.jpg' | asset_img_url }}" alt="fb"></li>
+  <li><img id="id_tw" src="{{ 'tw.jpg' | asset_img_url }}" alt="tw"></li>
+  <li><img id="id_ins" src="{{ 'ins.jpg' | asset_img_url }}" alt="ins"></li>
+  <li><img id="id_pt" src="{{ 'pt.jpg' | asset_img_url }}" alt="pt"></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{content_for_index}}
+
+
+<!-- {% for product in collections.frontpage.products limit:4 %}
+  <div>
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+    {{ product.price | money }}
+    {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | img_url: 'small' }}" alt="{{ product.featured_image.alt | escape }}">
+    </a>
+  </div>
+{% endfor %} -->

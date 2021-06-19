@@ -1,0 +1,36 @@
+<div>
+    <h3 id="titulo_txt">{{section.settings.id_titulo}}</h3>
+    <p id="txt_parrafo">{{section.settings.id_parrafo}}</p>
+    <a id="link_ps" href="">{{section.settings.id_link}}</a>
+    
+</div>
+
+
+{% schema %}
+{
+    "name": "Informacion",
+    "settings": [
+    {
+        "type": "text",
+        "id": "id_titulo",
+        "label": "Texto titulo"
+    },
+    {
+        "type": "richtext",
+        "id": "id_parrafo",
+        "label": "Texto parrafoo"
+    },
+    {
+        "type": "url",
+        "id":"id_link",
+        "label": "Enlace:"
+    }
+    ],
+    "presets": [
+        {
+            "category": "informaciones",
+            "name":"Cuadro de informacion"
+        }
+    ]
+}
+{% endschema %}
